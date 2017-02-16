@@ -1,0 +1,13 @@
+<resources>
+    <!--导航栏的高度-->
+    <dimen name="navi_h">50dp</dimen>
+    <!--状态栏高度 -->
+    <dimen name="status_bar_h">24dp</dimen>
+    <!--状态栏 + 导航栏高度-->
+    <dimen name="status_add_navi_h">74dp</dimen>
+    <!--导航栏AwesomeTextView图标大小 -->
+    <dimen name="navi_atv_ic">25dp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+</resources>

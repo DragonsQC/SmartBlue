@@ -1,0 +1,31 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        //[https://jcenter.bintray.com/com/android/tools/build/gradle/]
+        classpath 'com.android.tools.build:gradle:2.2.3'
+
+        //Java8 特性支持 [http://www.mvnrepository.com/artifact/me.tatarka/gradle-retrolambda]
+        classpath 'me.tatarka:gradle-retrolambda:3.3.1'
+
+        //Realm [https://realm.io/docs/java/latest/]
+        classpath "io.realm:realm-gradle-plugin:2.3.1"
+
+        //Freeline [https://github.com/alibaba/freeline][https://jcenter.bintray.com/com/antfortune/freeline/]
+        classpath 'com.antfortune.freeline:gradle:0.8.4'
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+        mavenLocal()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

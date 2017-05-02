@@ -7,12 +7,12 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
-import com.dqc.qlibrary.activity.SwipeBackCompatActivity;
+import com.dqc.qlibrary.activity.BaseSwipeBackCompatActivity;
 import com.dqc.qlibrary.library.systembartint.SystemBarTintManager;
 import com.dqc.smartblue.R;
 
 
-public class BaseSwipeBackActivity extends SwipeBackCompatActivity {
+public class BaseSwipeBackActivity extends BaseSwipeBackCompatActivity {
     public SystemBarTintManager mTintManager;
 
     @Override

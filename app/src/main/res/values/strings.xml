@@ -2,5 +2,4 @@
     <string name="app_name">SmartBlue</string>
     <string name="device_list">设备列表</string>
     <string name="bluetooth_state">蓝牙状态</string>
-
 </resources>

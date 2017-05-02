@@ -4,7 +4,7 @@ apply plugin: 'realm-android'
 
 android {
     compileSdkVersion 25
-    buildToolsVersion "25.0.2"
+    buildToolsVersion "25.0.3"
     dataBinding {
         enabled = true
     }
@@ -14,6 +14,12 @@ android {
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true    // dex突破65535的限制
+        resConfigs "zh", "en"
+        ndk {
+            //设置支持的SO库架构
+            abiFilters 'armeabi-v7a'//, 'armeabi', 'x86', 'x86_64', 'arm64-v8a'
+        }
 
     }
     compileOptions {
@@ -35,9 +41,9 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.github.DragonsQC:QLibrary:v1.0.84'
+    compile 'com.github.DragonsQC:QLibrary:v1.1.3'
     //MaterialDrawer [https://github.com/mikepenz/MaterialDrawer]
-    compile('com.mikepenz:materialdrawer:5.7.0@aar') {
+    compile('com.mikepenz:materialdrawer:5.9.0@aar') {
         transitive = true
     }
     compile 'com.mikepenz:google-material-typeface:2.2.0.3.original@aar'

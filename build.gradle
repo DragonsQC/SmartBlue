@@ -14,9 +14,6 @@ buildscript {
         //Realm [https://realm.io/docs/java/latest/]
         classpath "io.realm:realm-gradle-plugin:3.3.2"
 
-        //Jitpack [http://mvnrepository.com/artifact/com.github.dcendents/android-maven-gradle-plugin]
-        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.5'
-
         //[https://github.com/ben-manes/gradle-versions-plugin]
         classpath 'com.github.ben-manes:gradle-versions-plugin:0.15.0'
 

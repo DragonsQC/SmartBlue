@@ -41,7 +41,7 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.github.DragonsQC:QLibrary:v1.1.9'
+    compile 'com.github.DragonsQC:QLibrary:v1.1.20'
     //MaterialDrawer [https://github.com/mikepenz/MaterialDrawer]
     compile('com.mikepenz:materialdrawer:5.9.2@aar') {
         transitive = true

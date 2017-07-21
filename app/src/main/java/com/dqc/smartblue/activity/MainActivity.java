@@ -124,7 +124,7 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
                     .title(R.string.app_name)
                     .content("蓝牙未开启，是否开启？")
                     .negativeText(R.string.cancel)
-                    .negativeColorRes(R.color.gray_500)
+                    .negativeColorRes(R.color.grey_500)
                     .positiveText(R.string.ok)
                     .positiveColorRes(R.color.red_500)
                     .onPositive((dialog, which) -> {
@@ -380,11 +380,11 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
                     break;
                 case BluetoothDevice.BOND_BONDING:
                     itemBinding.tvState.setText("正在匹配");
-                    itemBinding.tvState.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.gray_700));
+                    itemBinding.tvState.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.grey_700));
                     break;
                 case BluetoothDevice.BOND_NONE:
                     itemBinding.tvState.setText("未匹配");
-                    itemBinding.tvState.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.gray_400));
+                    itemBinding.tvState.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.grey_400));
                     break;
             }
 

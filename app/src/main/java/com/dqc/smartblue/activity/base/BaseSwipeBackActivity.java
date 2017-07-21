@@ -8,12 +8,13 @@ import android.view.Window;
 import android.view.WindowManager;
 
 import com.dqc.qlibrary.activity.BaseSwipeBackCompatActivity;
-import com.dqc.qlibrary.library.systembartint.SystemBarTintManager;
 import com.dqc.smartblue.R;
 
 
 public class BaseSwipeBackActivity extends BaseSwipeBackCompatActivity {
-    public SystemBarTintManager mTintManager;
+
+    private TransitionMode mTransitionMode = TransitionMode.RIGHT;
+    private boolean        mIsTransition   = true;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -23,12 +24,30 @@ public class BaseSwipeBackActivity extends BaseSwipeBackCompatActivity {
 
     @Override
     protected boolean toggleOverridePendingTransition() {
-        return true;
+        return mIsTransition;
     }
 
     @Override
     protected TransitionMode getOverridePendingTransitionMode() {
-        return TransitionMode.RIGHT;
+        return mTransitionMode;
+    }
+
+    /**
+     * 设置 Activity 是否有切换动画，默认true
+     *
+     * @param isTransition boolean
+     */
+    public void setTransition(boolean isTransition) {
+        mIsTransition = isTransition;
+    }
+
+    /**
+     * 设置 Activity 切换的过度动画模式，不设置时默认为TransitionMode.RIGHT
+     *
+     * @param transitionMode TransitionMode
+     */
+    public void setTransitionMode(TransitionMode transitionMode) {
+        mTransitionMode = transitionMode;
     }
 
     /**
@@ -40,10 +59,6 @@ public class BaseSwipeBackActivity extends BaseSwipeBackCompatActivity {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             setTranslucentStatus(true);
         }
-        mTintManager = new SystemBarTintManager(this);
-        mTintManager.setStatusBarTintEnabled(true);
-        mTintManager.setNavigationBarTintEnabled(true);
-        mTintManager.setStatusBarTintResource(resId);
     }
 
     @TargetApi(19)

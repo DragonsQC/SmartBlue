@@ -48,7 +48,7 @@
             android:id="@+id/lv"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:divider="@color/gray_300"
+            android:divider="@color/grey_300"
             android:dividerHeight="@dimen/space_min"/>
     </LinearLayout>
 

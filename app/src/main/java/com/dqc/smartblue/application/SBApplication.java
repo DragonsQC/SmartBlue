@@ -7,7 +7,6 @@ import com.dqc.qlibrary.utils.QLog;
 import com.dqc.qlibrary.utils.SPUtils;
 import com.dqc.smartblue.BuildConfig;
 import com.dqc.smartblue.R;
-import com.squareup.leakcanary.LeakCanary;
 
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
@@ -48,7 +47,7 @@ public class SBApplication extends Application {
                 .build();
         Realm.setDefaultConfiguration(config);
 
-        LeakCanary.install(this);   //LeakCanary
+        //LeakCanary.install(this);   //LeakCanary
         //====== init ======
 
     }

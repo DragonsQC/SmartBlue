@@ -6,7 +6,7 @@ buildscript {
     }
     dependencies {
         //[https://jcenter.bintray.com/com/android/tools/build/gradle/]
-        classpath 'com.android.tools.build:gradle:3.0.0-alpha9'
+        classpath 'com.android.tools.build:gradle:3.0.0-beta1'
 
         //Realm [https://realm.io/docs/java/latest/]
         classpath "io.realm:realm-gradle-plugin:3.5.0"

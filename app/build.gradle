@@ -40,7 +40,7 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'com.github.DragonsQC:QLibrary:v1.1.36'
+    implementation 'com.github.DragonsQC:QLibrary:v1.1.47'
     //MaterialDrawer [https://github.com/mikepenz/MaterialDrawer]
     implementation('com.mikepenz:materialdrawer:5.9.5@aar') {
         transitive = true

@@ -5,7 +5,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.0.0-beta6'
+        classpath 'com.android.tools.build:gradle:3.0.0-beta7'
 
         //Realm [https://realm.io/docs/java/latest/]
         classpath "io.realm:realm-gradle-plugin:3.7.2"
@@ -27,4 +27,9 @@ allprojects {
 
 task clean(type: Delete) {
     delete rootProject.buildDir
+}
+
+ext {
+    // App dependencies
+    supportLibraryVersion = '26.1.0'
 }

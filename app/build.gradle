@@ -3,7 +3,7 @@ apply plugin: 'realm-android'
 
 android {
     compileSdkVersion 26
-    buildToolsVersion "26.0.1"
+    buildToolsVersion "26.0.2"
     dataBinding {
         enabled = true
     }
@@ -38,9 +38,20 @@ android {
     }
 }
 
+configurations.all {
+    resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+        def requested = details.requested
+        if (requested.group == 'com.android.support') {
+            if (!requested.name.startsWith("multidex")) {
+                details.useVersion rootProject.ext.supportLibraryVersion
+            }
+        }
+    }
+}
+
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'com.github.DragonsQC:QLibrary:1.2.1'
+    implementation 'com.github.DragonsQC:QLibrary:1.2.2'
     //MaterialDrawer [https://github.com/mikepenz/MaterialDrawer]
     implementation('com.mikepenz:materialdrawer:5.9.5@aar') {
         transitive = true

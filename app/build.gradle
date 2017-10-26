@@ -51,7 +51,7 @@ configurations.all {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'com.github.DragonsQC:QLibrary:1.2.4'
+    implementation 'com.github.DragonsQC:QLibrary:1.2.11'
     //MaterialDrawer [https://github.com/mikepenz/MaterialDrawer]
     implementation('com.mikepenz:materialdrawer:5.9.5@aar') {
         transitive = true

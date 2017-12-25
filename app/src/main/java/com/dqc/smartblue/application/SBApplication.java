@@ -7,6 +7,7 @@ import com.dqc.qlibrary.utils.QLog;
 import com.dqc.qlibrary.utils.SPUtils;
 import com.dqc.smartblue.BuildConfig;
 import com.dqc.smartblue.R;
+import com.github.anzewei.parallaxbacklayout.ParallaxHelper;
 
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
@@ -32,11 +33,17 @@ public class SBApplication extends Application {
         _instance = this;
         isDebug = BuildConfig.DEBUG;
 
-        TypefaceProvider.registerDefaultIconSets(); //AndroidBootstrap Typeface 初始化
+        //侧滑返回注册
+        registerActivityLifecycleCallbacks(ParallaxHelper.getInstance());
 
-        QLog.init(isDebug, getString(R.string.app_name));   //Log debug
+        //AndroidBootstrap Typeface 初始化
+        TypefaceProvider.registerDefaultIconSets();
 
-        SPUtils.init(getString(R.string.app_name));  //SPUtil 初始化
+        //Log debug
+        QLog.init(isDebug, getString(R.string.app_name));
+
+        //SPUtil 初始化
+        SPUtils.init(getString(R.string.app_name));
 
         //Realm 初始化
         Realm.init(this);

@@ -8,24 +8,13 @@ import com.dqc.qlibrary.activity.BaseAppCompatActivity;
 import com.dqc.smartblue.R;
 
 
-public class BaseActivity extends BaseAppCompatActivity {
+public abstract class BaseActivity extends BaseAppCompatActivity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setStatusBarColor(ContextCompat.getColor(getApplicationContext(), R.color.colorPrimary));
     }
-
-    @Override
-    protected boolean toggleOverridePendingTransition() {
-        return true;
-    }
-
-    @Override
-    protected TransitionMode getOverridePendingTransitionMode() {
-        return TransitionMode.RIGHT;
-    }
-
 
     public void onClick_base(View view) {
         switch (view.getId()) {

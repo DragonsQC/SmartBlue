@@ -41,12 +41,16 @@ import com.mikepenz.materialdrawer.model.interfaces.Nameable;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Set;
 
 
+/**
+ * @author DragonsQC
+ */
 public class MainActivity extends BaseActivity implements AdapterView.OnItemClickListener, BluetoothProfile.ServiceListener {
 
-    private static MainActivity _instance;
+    private static MainActivity sInstance;
 
     private ActivityMainBinding mBinding;
     private BluetoothAdapter    mBluetoothAdapter;
@@ -61,7 +65,7 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
     private NotifyUtil mNotifyUtil;
 
     public static MainActivity getInstance() {
-        return _instance;
+        return sInstance;
     }
 
     /**
@@ -71,7 +75,7 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
 
         @Override
         public void onReceive(Context context, Intent intent) {
-            switch (intent.getAction()) {
+            switch (Objects.requireNonNull(intent.getAction())) {
                 case BluetoothAdapter.ACTION_STATE_CHANGED:
                     int blueState = intent.getIntExtra(BluetoothAdapter.EXTRA_STATE, 0);
                     switch (blueState) {
@@ -87,7 +91,11 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
                             ToastUtils.showDefault(getApplicationContext(), "蓝牙已关闭");
                             updateBluetoothState();
                             break;
+                        default:
+                            break;
                     }
+                    break;
+                default:
                     break;
             }
         }
@@ -99,7 +107,7 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
         mBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
         mBinding.setViewModel(new ViewModel());
 
-        _instance = this;
+        sInstance = this;
 
         mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
 
@@ -169,7 +177,7 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
         super.onDestroy();
         unregisterReceiver(mSmartBlueReceiver);
         unregisterReceiver(mBluetoothStateReceiver);
-        _instance = null;
+        sInstance = null;
     }
 
     @Override
@@ -216,6 +224,8 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
                                 //设备列表
                                 case R.string.device_list:
                                     return false;
+                                default:
+                                    break;
                             }
                         }
                     }
@@ -385,6 +395,8 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
                 case BluetoothDevice.BOND_NONE:
                     itemBinding.tvState.setText("未匹配");
                     itemBinding.tvState.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.grey_400));
+                    break;
+                default:
                     break;
             }
 

@@ -1,5 +1,6 @@
 package com.dqc.smartblue.activity;
 
+import android.annotation.SuppressLint;
 import android.bluetooth.BluetoothDevice;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
@@ -17,6 +18,9 @@ import com.dqc.smartblue.databinding.ActivityBlueEventBinding;
 import com.dqc.smartblue.entity.BlueData;
 import com.dqc.smartblue.utils.RealmUtils;
 
+/**
+ * @author DragonsQC
+ */
 public class BlueEventActivity extends BaseSwipeBackBindingActivity implements Switch.OnCheckedChangeListener, View.OnClickListener {
 
     public static String KEY = "KEY";
@@ -31,6 +35,7 @@ public class BlueEventActivity extends BaseSwipeBackBindingActivity implements S
         super.onCreate(savedInstanceState);
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
     public void onCreateBinding() {
         mBinding = DataBindingUtil.setContentView(this, R.layout.activity_blue_event);
@@ -160,6 +165,8 @@ public class BlueEventActivity extends BaseSwipeBackBindingActivity implements S
                     }
                 }
                 break;
+            default:
+                break;
         }
     }
 
@@ -171,6 +178,8 @@ public class BlueEventActivity extends BaseSwipeBackBindingActivity implements S
                 break;
             case R.id.tv_disconnect_msg:
                 showNotifyDataDialog(mBluetoothDevice, false);
+                break;
+            default:
                 break;
         }
     }

@@ -3,7 +3,7 @@ apply plugin: 'com.github.ben-manes.versions'
 buildscript {
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.1.1'
+        classpath 'com.android.tools.build:gradle:3.1.2'
 
         //Realm [https://realm.io/docs/java/latest/]
         classpath "io.realm:realm-gradle-plugin:5.0.1"

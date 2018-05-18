@@ -1,18 +1,18 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
-apply plugin: 'com.github.ben-manes.versions'
+apply plugin: "com.github.ben-manes.versions"
 buildscript {
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.1.2'
+        classpath "com.android.tools.build:gradle:3.1.2"
 
         //Realm [https://realm.io/docs/java/latest/]
-        classpath "io.realm:realm-gradle-plugin:5.0.1"
+        classpath "io.realm:realm-gradle-plugin:5.1.0"
 
         //[https://github.com/ben-manes/gradle-versions-plugin]
-        classpath 'com.github.ben-manes:gradle-versions-plugin:0.17.0'
+        classpath "com.github.ben-manes:gradle-versions-plugin:0.17.0"
 
         //Freeline [https://github.com/alibaba/freeline][https://jcenter.bintray.com/com/antfortune/freeline/]
-//        classpath 'com.antfortune.freeline:gradle:0.8.4'
+//        classpath "com.antfortune.freeline:gradle:0.8.4"
     }
 
     repositories {
@@ -35,5 +35,5 @@ task clean(type: Delete) {
 
 ext {
     // App dependencies
-    supportLibraryVersion = '27.0.2'
+    supportLibraryVersion = "27.0.2"
 }

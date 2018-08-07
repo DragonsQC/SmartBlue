@@ -53,7 +53,7 @@ dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "com.github.DragonsQC:QLibrary:1.5.4"
     //MaterialDrawer [https://github.com/mikepenz/MaterialDrawer]
-    implementation("com.mikepenz:materialdrawer:6.0.7@aar") {
+    implementation("com.mikepenz:materialdrawer:6.0.9@aar") {
         transitive = true
     }
     implementation "com.mikepenz:google-material-typeface:3.0.1.2.original@aar"

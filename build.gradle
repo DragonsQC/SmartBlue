@@ -6,7 +6,7 @@ buildscript {
         classpath 'com.android.tools.build:gradle:3.1.4'
 
         //Realm [https://realm.io/docs/java/latest/]
-        classpath "io.realm:realm-gradle-plugin:5.4.1"
+        classpath "io.realm:realm-gradle-plugin:5.5.0"
 
         //[https://github.com/ben-manes/gradle-versions-plugin]
         classpath "com.github.ben-manes:gradle-versions-plugin:0.20.0"

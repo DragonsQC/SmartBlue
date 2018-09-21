@@ -2,12 +2,9 @@ package com.dqc.smartblue.application;
 
 import android.app.Application;
 
-import com.beardedhen.androidbootstrap.TypefaceProvider;
-import com.dqc.qlibrary.utils.QLog;
-import com.dqc.qlibrary.utils.SPUtils;
+import com.dqc.qlibrary.QLibrary;
 import com.dqc.smartblue.BuildConfig;
 import com.dqc.smartblue.R;
-import com.github.anzewei.parallaxbacklayout.ParallaxHelper;
 
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
@@ -18,11 +15,11 @@ import io.realm.RealmConfiguration;
  */
 public class SBApplication extends Application {
 
-    public static boolean isDebug = true;
-    private static SBApplication _instance;
+    public static  boolean       sIsDebug = true;
+    private static SBApplication sInstance;
 
     public static SBApplication getInstance() {
-        return _instance;
+        return sInstance;
     }
 
     @Override
@@ -30,20 +27,12 @@ public class SBApplication extends Application {
         super.onCreate();
 
         //====== init ======
-        _instance = this;
-        isDebug = BuildConfig.DEBUG;
+        sInstance = this;
+        sIsDebug = BuildConfig.DEBUG;
 
-        //侧滑返回注册
-        registerActivityLifecycleCallbacks(ParallaxHelper.getInstance());
-
-        //AndroidBootstrap Typeface 初始化
-        TypefaceProvider.registerDefaultIconSets();
-
-        //Log debug
-        QLog.init(isDebug, getString(R.string.app_name));
-
-        //SPUtil 初始化
-        SPUtils.init(getString(R.string.app_name));
+        //<editor-fold defaultstate="collapsed" desc="QLibrary初始化" >
+        QLibrary.init(getInstance(), sIsDebug, getString(R.string.app_name), 4);
+        //</editor-fold>
 
         //Realm 初始化
         Realm.init(this);

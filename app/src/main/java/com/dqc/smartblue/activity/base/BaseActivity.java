@@ -1,11 +1,12 @@
 package com.dqc.smartblue.activity.base;
 
 import android.os.Bundle;
-import android.support.v4.content.ContextCompat;
 import android.view.View;
 
 import com.dqc.qlibrary.activity.BaseAppCompatActivity;
 import com.dqc.smartblue.R;
+
+import androidx.core.content.ContextCompat;
 
 
 public abstract class BaseActivity extends BaseAppCompatActivity {

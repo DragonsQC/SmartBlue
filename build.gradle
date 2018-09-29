@@ -2,11 +2,16 @@
 apply plugin: "com.github.ben-manes.versions"
 buildscript {
 
+    repositories {
+        jcenter()
+        google()
+    }
+
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.1.4'
+        classpath 'com.android.tools.build:gradle:3.2.0'
 
         //Realm [https://realm.io/docs/java/latest/]
-        classpath "io.realm:realm-gradle-plugin:5.5.0"
+        classpath "io.realm:realm-gradle-plugin:5.7.0"
 
         //[https://github.com/ben-manes/gradle-versions-plugin]
         classpath "com.github.ben-manes:gradle-versions-plugin:0.20.0"
@@ -15,10 +20,6 @@ buildscript {
 //        classpath "com.antfortune.freeline:gradle:0.8.4"
     }
 
-    repositories {
-        jcenter()
-        google()
-    }
 }
 
 allprojects {
@@ -35,5 +36,5 @@ task clean(type: Delete) {
 
 ext {
     // App dependencies
-    supportLibraryVersion = "27.0.2"
+    supportLibraryVersion = "28.0.0"
 }

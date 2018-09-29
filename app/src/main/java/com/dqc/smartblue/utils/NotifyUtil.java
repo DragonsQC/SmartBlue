@@ -10,11 +10,12 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Build;
 import android.os.SystemClock;
-import android.support.v4.app.NotificationCompat;
 import android.widget.RemoteViews;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+
+import androidx.core.app.NotificationCompat;
 
 @SuppressLint("NewApi")
 public class NotifyUtil {

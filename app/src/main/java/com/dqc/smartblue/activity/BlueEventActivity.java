@@ -2,7 +2,6 @@ package com.dqc.smartblue.activity;
 
 import android.annotation.SuppressLint;
 import android.bluetooth.BluetoothDevice;
-import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.text.InputType;
 import android.text.TextUtils;
@@ -17,6 +16,8 @@ import com.dqc.smartblue.activity.base.BaseSwipeBackBindingActivity;
 import com.dqc.smartblue.databinding.ActivityBlueEventBinding;
 import com.dqc.smartblue.entity.BlueData;
 import com.dqc.smartblue.utils.RealmUtils;
+
+import androidx.databinding.DataBindingUtil;
 
 /**
  * @author DragonsQC

@@ -51,7 +51,7 @@ configurations.all {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'com.github.DragonsQC:QLibrary:1.6.7'
+    implementation 'com.github.DragonsQC:QLibrary:1.6.9'
 
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
 

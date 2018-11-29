@@ -105,6 +105,9 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        setStatusBarTransparent();
+
         mBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
         mBinding.setViewModel(new ViewModel());
 

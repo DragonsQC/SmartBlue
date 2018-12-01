@@ -12,5 +12,5 @@
     android:textSize="@dimen/navi_atv_ic"
     app:bootstrapBrand="secondary"
     app:bootstrapText="{fa-angle-left}"
-    app:fontAwesomeIcon="fa_android"
+    app:fontAwesomeBrandsIcon="fab_android"
     tools:ignore="SpUsage"/>

@@ -1,23 +1,23 @@
-apply plugin: 'com.android.application'
-apply plugin: 'realm-android'
+apply plugin: "com.android.application"
+apply plugin: "realm-android"
 
 android {
     compileSdkVersion 28
-    buildToolsVersion '28.0.3'
+    buildToolsVersion "28.0.3"
     dataBinding {
         enabled = true
     }
     defaultConfig {
-        applicationId 'com.dqc.smartblue'
+        applicationId "com.dqc.smartblue"
         minSdkVersion 21
         targetSdkVersion 28
         versionCode 1
-        versionName '1.0'
+        versionName "1.0"
         multiDexEnabled true    // dex突破65535的限制
-        resConfigs 'zh'
+        resConfigs "zh"
         ndk {
             //设置支持的SO库架构
-            abiFilters 'armeabi-v7a'//, 'armeabi', 'x86', 'x86_64', 'arm64-v8a'
+            abiFilters "armeabi-v7a"//, "armeabi", "x86", "x86_64", "arm64-v8a"
         }
 
     }
@@ -28,12 +28,12 @@ android {
     buildTypes {
         release {
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
         }
     }
     sourceSets {
         main {
-            jniLibs.srcDirs = ['libs']
+            jniLibs.srcDirs = ["libs"]
         }
     }
 }
@@ -41,8 +41,8 @@ android {
 configurations.all {
     resolutionStrategy.eachDependency { DependencyResolveDetails details ->
         def requested = details.requested
-        if (requested.group == 'com.android.support') {
-            if (!requested.name.startsWith('multidex')) {
+        if (requested.group == "com.android.support") {
+            if (!requested.name.startsWith("multidex")) {
                 details.useVersion rootProject.ext.supportLibraryVersion
             }
         }
@@ -50,19 +50,19 @@ configurations.all {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'com.github.DragonsQC:QLibrary:1.6.14'
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation "com.github.DragonsQC:QLibrary:1.6.23"
 
     //MaterialDrawer [https://github.com/mikepenz/MaterialDrawer]
     implementation "com.mikepenz:materialdrawer:6.1.1"
-    implementation 'com.mikepenz:google-material-typeface:3.0.1.3.original@aar'
+    implementation "com.mikepenz:google-material-typeface:3.0.1.3.original@aar"
 
     //LeakCanary [https://github.com/square/leakcanary]
-//    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5.1'
+//    debugCompile "com.squareup.leakcanary:leakcanary-android:1.5.1"
 }
 repositories {
     jcenter()
     google()
-    maven { url 'https://jitpack.io' }
-    flatDir { dirs 'libs' }
+    maven { url "https://jitpack.io" }
+    flatDir { dirs "libs" }
 }

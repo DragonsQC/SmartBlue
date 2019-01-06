@@ -44,18 +44,18 @@ import java.util.Set;
 
 import androidx.core.content.ContextCompat;
 import androidx.databinding.DataBindingUtil;
+import androidx.lifecycle.ViewModelProviders;
 
 
 /**
  * @author DragonsQC
  */
-public class MainActivity extends BaseActivity implements AdapterView.OnItemClickListener, BluetoothProfile.ServiceListener {
+public class MainActivity extends BaseActivity<ActivityMainBinding, MainViewModel> implements AdapterView.OnItemClickListener, BluetoothProfile.ServiceListener {
 
     private static MainActivity sInstance;
 
-    private ActivityMainBinding mBinding;
-    private BluetoothAdapter    mBluetoothAdapter;
-    private SmartBlueReceiver   mSmartBlueReceiver;
+    private BluetoothAdapter  mBluetoothAdapter;
+    private SmartBlueReceiver mSmartBlueReceiver;
 
     public  DeviceListAdapter     mAdapter                 = null;
     private List<BluetoothDevice> mBluetoothDevices        = new ArrayList<>();
@@ -64,6 +64,14 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
     private Drawer mDrawer = null;
 
     private NotifyUtil mNotifyUtil;
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        unregisterReceiver(mSmartBlueReceiver);
+        unregisterReceiver(mBluetoothStateReceiver);
+        sInstance = null;
+    }
 
     public static MainActivity getInstance() {
         return sInstance;
@@ -83,13 +91,13 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
                         case BluetoothAdapter.STATE_TURNING_ON:
                             break;
                         case BluetoothAdapter.STATE_ON:
-                            ToastUtils.showDefault(getApplicationContext(), "蓝牙已打开");
+                            ToastUtils.showDefault("蓝牙已打开");
                             updateBluetoothState();
                             break;
                         case BluetoothAdapter.STATE_TURNING_OFF:
                             break;
                         case BluetoothAdapter.STATE_OFF:
-                            ToastUtils.showDefault(getApplicationContext(), "蓝牙已关闭");
+                            ToastUtils.showDefault("蓝牙已关闭");
                             updateBluetoothState();
                             break;
                         default:
@@ -103,10 +111,25 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
     };
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    protected void onSaveInstanceState(Bundle outState) {
+        outState = mDrawer.saveInstanceState(outState);
+        super.onSaveInstanceState(outState);
+    }
 
+    @Override
+    public int layoutId() {
+        return R.layout.activity_main;
+    }
+
+    @Override
+    public MainViewModel initViewModel() {
+        return ViewModelProviders.of(this).get(MainViewModel.class);
+    }
+
+    @Override
+    public void onInit(Bundle savedInstanceState) {
         setStatusBarTransparent();
+        disableBack();
 
         mBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
         mBinding.setViewModel(new ViewModel());
@@ -167,21 +190,6 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
 
         //获得已连接的设备
         mBluetoothAdapter.getProfileProxy(getApplicationContext(), MainActivity.this, BluetoothProfile.HEADSET);
-
-    }
-
-    @Override
-    protected void onSaveInstanceState(Bundle outState) {
-        outState = mDrawer.saveInstanceState(outState);
-        super.onSaveInstanceState(outState);
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        unregisterReceiver(mSmartBlueReceiver);
-        unregisterReceiver(mBluetoothStateReceiver);
-        sInstance = null;
     }
 
     @Override
@@ -244,10 +252,10 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
     public void updateBluetoothState() {
         if (mBluetoothAdapter.isEnabled()) {
             mBinding.tvBluetoothState.setBootstrapBrand(DefaultBootstrapBrand.SECONDARY);
-            mBinding.tvBluetoothState.setFontAwesomeIcon(FontAwesome.FA_BLUETOOTH);
+            mBinding.tvBluetoothState.setMarkdownText("{fab-bluetooth}");
         } else {
             mBinding.tvBluetoothState.setBootstrapBrand(DefaultBootstrapBrand.REGULAR);
-            mBinding.tvBluetoothState.setFontAwesomeIcon(FontAwesome.FA_BLUETOOTH_B);
+            mBinding.tvBluetoothState.setMarkdownText("{fab-bluetooth-b}");
         }
 
         updateDeviceList();
@@ -292,7 +300,7 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
             }
             mNotifyUtil = new NotifyUtil(getApplicationContext(), 2, true);
             mNotifyUtil.notifyNormailMoreline(pIntent, smallIcon, ticker, title, content, true, false, false);
-            VibratorUtils.vibrate(MainActivity.this, new long[]{1000, 1000, 1000, 1000, 1000, 1000}, false);
+            VibratorUtils.vibrate(new long[]{1000, 1000, 1000, 1000, 1000, 1000}, false);
         }
     }
 
@@ -384,7 +392,7 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
                     break;
                 case BluetoothDevice.DEVICE_TYPE_UNKNOWN:
                 default:
-                    itemBinding.tvBluetoothState.setFontAwesomeIcon(FontAwesome.FA_BLUETOOTH);
+                    itemBinding.tvBluetoothState.setMarkdownText("{fab-bluetooth}");
                     break;
             }
             switch (entity.getBondState()) {

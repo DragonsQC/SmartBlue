@@ -51,7 +51,10 @@ configurations.all {
 
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
-    implementation "com.github.DragonsQC:QLibrary:1.6.23"
+    implementation "com.github.DragonsQC:QLibrary:1.7.8"
+
+    implementation rootProject.ext.support["lifecycle-compiler"]
+    annotationProcessor rootProject.ext.support["lifecycle-compiler"]
 
     //MaterialDrawer [https://github.com/mikepenz/MaterialDrawer]
     implementation "com.mikepenz:materialdrawer:6.1.1"

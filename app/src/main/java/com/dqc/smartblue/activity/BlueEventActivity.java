@@ -1,6 +1,5 @@
 package com.dqc.smartblue.activity;
 
-import android.annotation.SuppressLint;
 import android.bluetooth.BluetoothDevice;
 import android.os.Bundle;
 import android.text.InputType;
@@ -12,21 +11,19 @@ import android.widget.Switch;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.dqc.qlibrary.utils.ToastUtils;
 import com.dqc.smartblue.R;
-import com.dqc.smartblue.activity.base.BaseSwipeBackBindingActivity;
+import com.dqc.smartblue.activity.base.BaseActivity;
 import com.dqc.smartblue.databinding.ActivityBlueEventBinding;
 import com.dqc.smartblue.entity.BlueData;
 import com.dqc.smartblue.utils.RealmUtils;
 
-import androidx.databinding.DataBindingUtil;
+import androidx.lifecycle.ViewModelProviders;
 
 /**
  * @author DragonsQC
  */
-public class BlueEventActivity extends BaseSwipeBackBindingActivity implements Switch.OnCheckedChangeListener, View.OnClickListener {
+public class BlueEventActivity extends BaseActivity<ActivityBlueEventBinding, BlueEventViewModel> implements Switch.OnCheckedChangeListener, View.OnClickListener {
 
     public static String KEY = "KEY";
-
-    private ActivityBlueEventBinding mBinding;
 
     private BluetoothDevice mBluetoothDevice;
     private BlueData        mBlueData;
@@ -36,10 +33,18 @@ public class BlueEventActivity extends BaseSwipeBackBindingActivity implements S
         super.onCreate(savedInstanceState);
     }
 
-    @SuppressLint("SetTextI18n")
     @Override
-    public void onCreateBinding() {
-        mBinding = DataBindingUtil.setContentView(this, R.layout.activity_blue_event);
+    public int layoutId() {
+        return R.layout.activity_blue_event;
+    }
+
+    @Override
+    public BlueEventViewModel initViewModel() {
+        return ViewModelProviders.of(this).get(BlueEventViewModel.class);
+    }
+
+    @Override
+    public void onInit(Bundle savedInstanceState) {
         mBluetoothDevice = getIntent().getExtras().getParcelable(KEY);
         if (null == mBluetoothDevice) {
             finish();
@@ -59,8 +64,6 @@ public class BlueEventActivity extends BaseSwipeBackBindingActivity implements S
         mBinding.swDisconnect.setOnCheckedChangeListener(this);
         mBinding.tvConnectedMsg.setOnClickListener(this);
         mBinding.tvDisconnectMsg.setOnClickListener(this);
-
-
     }
 
     /**
@@ -113,10 +116,10 @@ public class BlueEventActivity extends BaseSwipeBackBindingActivity implements S
 
                         RealmUtils.getInstance().saveOrUpdate(blueData);
                         if (isConnected) {
-                            ToastUtils.showDefault(getApplicationContext(), device.getName() + " 连接时通知注册成功");
+                            ToastUtils.showDefault(device.getName() + " 连接时通知注册成功");
                             mBinding.tvConnectedMsg.setText(input.toString().trim());
                         } else {
-                            ToastUtils.showDefault(getApplicationContext(), device.getName() + " 断开时通知注册成功");
+                            ToastUtils.showDefault(device.getName() + " 断开时通知注册成功");
                             mBinding.tvDisconnectMsg.setText(input.toString().trim());
                         }
                     }
@@ -131,7 +134,7 @@ public class BlueEventActivity extends BaseSwipeBackBindingActivity implements S
         switch (buttonView.getId()) {
             case R.id.sw_connected:
                 if (null == mBlueData) {
-                    ToastUtils.showDefault(getApplicationContext(), "请先输入通知内容");
+                    ToastUtils.showDefault("请先输入通知内容");
                     showNotifyDataDialog(mBluetoothDevice, true);
                 } else {
                     blueData.setAddress(mBlueData.getAddress());
@@ -141,15 +144,15 @@ public class BlueEventActivity extends BaseSwipeBackBindingActivity implements S
                     blueData.setDisconnectMsg(mBlueData.getDisconnectMsg());
                     RealmUtils.getInstance().saveOrUpdate(blueData);
                     if (isChecked) {
-                        ToastUtils.showDefault(getApplicationContext(), mBluetoothDevice.getName() + " 连接通知已开启");
+                        ToastUtils.showDefault(mBluetoothDevice.getName() + " 连接通知已开启");
                     } else {
-                        ToastUtils.showDefault(getApplicationContext(), mBluetoothDevice.getName() + " 连接通知已关闭");
+                        ToastUtils.showDefault(mBluetoothDevice.getName() + " 连接通知已关闭");
                     }
                 }
                 break;
             case R.id.sw_disconnect:
                 if (null == mBlueData) {
-                    ToastUtils.showDefault(getApplicationContext(), "请先输入通知内容");
+                    ToastUtils.showDefault("请先输入通知内容");
                     showNotifyDataDialog(mBluetoothDevice, false);
                 } else {
                     blueData.setAddress(mBlueData.getAddress());
@@ -159,9 +162,9 @@ public class BlueEventActivity extends BaseSwipeBackBindingActivity implements S
                     blueData.setDisconnectMsg(mBlueData.getDisconnectMsg());
                     RealmUtils.getInstance().saveOrUpdate(blueData);
                     if (isChecked) {
-                        ToastUtils.showDefault(getApplicationContext(), mBluetoothDevice.getName() + " 断开通知已开启");
+                        ToastUtils.showDefault(mBluetoothDevice.getName() + " 断开通知已开启");
                     } else {
-                        ToastUtils.showDefault(getApplicationContext(), mBluetoothDevice.getName() + " 断开通知已关闭");
+                        ToastUtils.showDefault(mBluetoothDevice.getName() + " 断开通知已关闭");
 
                     }
                 }

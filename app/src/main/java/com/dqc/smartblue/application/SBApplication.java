@@ -31,7 +31,7 @@ public class SBApplication extends Application {
         sIsDebug = BuildConfig.DEBUG;
 
         //<editor-fold defaultstate="collapsed" desc="QLibrary初始化" >
-        QLibrary.init(getInstance(), sIsDebug, getString(R.string.app_name), 4);
+        QLibrary.getInstance().init(getInstance(), sIsDebug, getString(R.string.app_name), 4);
         //</editor-fold>
 
         //Realm 初始化

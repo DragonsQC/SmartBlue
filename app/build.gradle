@@ -51,13 +51,10 @@ configurations.all {
 
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
-    implementation "com.github.DragonsQC:QLibrary:1.7.8"
-
+    implementation rootProject.ext.dependencies["QLibrary"]
     implementation rootProject.ext.support["lifecycle-compiler"]
     annotationProcessor rootProject.ext.support["lifecycle-compiler"]
-
-    //MaterialDrawer [https://github.com/mikepenz/MaterialDrawer]
-    implementation "com.mikepenz:materialdrawer:6.1.1"
+    implementation rootProject.ext.dependencies["materialdrawer"]
     implementation "com.mikepenz:google-material-typeface:3.0.1.3.original@aar"
 
     //LeakCanary [https://github.com/square/leakcanary]

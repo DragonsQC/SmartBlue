@@ -9,13 +9,13 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.3.0'
+        classpath 'com.android.tools.build:gradle:3.3.2'
 
         //Realm [https://realm.io/docs/java/latest/]
-        classpath 'io.realm:realm-gradle-plugin:5.9.0'
+        classpath 'io.realm:realm-gradle-plugin:5.9.1'
 
         //[https://github.com/ben-manes/gradle-versions-plugin]
-        classpath 'com.github.ben-manes:gradle-versions-plugin:0.20.0'
+        classpath 'com.github.ben-manes:gradle-versions-plugin:0.21.0'
 
         //Freeline [https://github.com/alibaba/freeline][https://jcenter.bintray.com/com/antfortune/freeline/]
 //        classpath 'com.antfortune.freeline:gradle:0.8.4'

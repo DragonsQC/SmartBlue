@@ -2,15 +2,15 @@ apply plugin: "com.android.application"
 apply plugin: "realm-android"
 
 android {
-    compileSdkVersion 28
-    buildToolsVersion "28.0.3"
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    buildToolsVersion rootProject.ext.android.buildToolsVersion
     dataBinding {
         enabled = true
     }
     defaultConfig {
         applicationId "com.dqc.smartblue"
-        minSdkVersion 21
-        targetSdkVersion 28
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
         versionCode 1
         versionName "1.0"
         multiDexEnabled true    // dex突破65535的限制

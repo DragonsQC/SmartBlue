@@ -17,8 +17,6 @@ buildscript {
         //[https://github.com/ben-manes/gradle-versions-plugin]
         classpath 'com.github.ben-manes:gradle-versions-plugin:0.21.0'
 
-        //Freeline [https://github.com/alibaba/freeline][https://jcenter.bintray.com/com/antfortune/freeline/]
-//        classpath 'com.antfortune.freeline:gradle:0.8.4'
     }
 
 }

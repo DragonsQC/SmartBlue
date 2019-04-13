@@ -56,6 +56,7 @@ dependencies {
     annotationProcessor rootProject.ext.support["lifecycle-compiler"]
     implementation rootProject.ext.dependencies["materialdrawer"]
     implementation "com.mikepenz:google-material-typeface:3.0.1.3.original@aar"
+    implementation rootProject.ext.dependencies["material-dialogs"]
 
     //LeakCanary [https://github.com/square/leakcanary]
 //    debugCompile "com.squareup.leakcanary:leakcanary-android:1.5.1"

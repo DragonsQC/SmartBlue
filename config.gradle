@@ -8,7 +8,7 @@ ext {
     ]
     //version配置
     versions = [
-            "support-version": "28.0.0",
+            support: "28.0.0",
     ]
     //support androidx配置
     support = [
@@ -22,101 +22,99 @@ ext {
             "cardview"            : "androidx.cardview:cardview:1.0.0",
             "constraintlayout"    : "androidx.constraintlayout:constraintlayout:1.1.3",
 
+            ////Google AAC
             "lifecycle-compiler"  : "androidx.lifecycle:lifecycle-compiler:2.0.0",
             "lifecycle-extensions": "androidx.lifecycle:lifecycle-extensions:2.0.0",
 
             "material"            : "com.google.android.material:material:1.0.0",
 
-            "support-annotations" : "com.android.support:support-annotations:${versions["support-version"]}",
-            "support-appcompat-v7": "com.android.support:appcompat-v7:${versions["support-version"]}",
+            "support-annotations" : "com.android.support:support-annotations:${versions.support}",
+            "support-appcompat-v7": "com.android.support:appcompat-v7:${versions.support}",
 
-            //kotlin运行库
-            "kotlin-stdlib"       : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.3.30",
     ]
     //依赖第三方配置
     dependencies = [
             "QLibrary"                  : "com.github.DragonsQC:QLibrary:1.8.1",
 
             //RxLifecycle [https://github.com/trello/RxLifecycle]
-            "rxlifecycle"               : "com.trello.rxlifecycle3:rxlifecycle:3.0.0",
-            "rxlifecycle-components"    : "com.trello.rxlifecycle3:rxlifecycle-components:3.0.0",
+            "rxlifecycle"            : "com.trello.rxlifecycle3:rxlifecycle:3.0.0",
+            "rxlifecycle-components" : "com.trello.rxlifecycle3:rxlifecycle-components:3.0.0",
 
             //RxBinding [https://github.com/JakeWharton/RxBinding]
-            "rxbinding"                 : "com.jakewharton.rxbinding3:rxbinding:3.0.0-alpha2",
+            "rxbinding"              : "com.jakewharton.rxbinding3:rxbinding:3.0.0-alpha2",
 
             //Glide [https://github.com/bumptech/glide]
-            "glide"                     : "com.github.bumptech.glide:glide:4.9.0",
-            "glide-compiler"            : "com.github.bumptech.glide:compiler:4.9.0",
+            "glide"                  : "com.github.bumptech.glide:glide:4.9.0",
+            "glide-compiler"         : "com.github.bumptech.glide:compiler:4.9.0",
 
             //高德地图 [http://lbs.amap.com/api/android-sdk/changelog，
             // http://lbs.amap.com/api/android-location-sdk/changelog]
             // [https://jcenter.bintray.com/com/amap/api/]
-            "amap-3dmap"                : "com.amap.api:3dmap:6.8.0",
-            "amap-search"               : "com.amap.api:search:6.5.0.1",
-            "amap-location"             : "com.amap.api:location:4.5.1",
+            "amap-3dmap"             : "com.amap.api:3dmap:6.8.0",
+            "amap-search"            : "com.amap.api:search:6.5.0.1",
+            "amap-location"          : "com.amap.api:location:4.6.0",
 
             //腾讯Bugly [https://bugly.qq.com/v2/downloads] [https://jcenter.bintray.com/com/tencent/bugly/]
-            "bugly"                     : "com.tencent.bugly:crashreport_upgrade:1.3.8",
+            "bugly"                  : "com.tencent.bugly:crashreport_upgrade:1.3.9",
 
             //环信 [http://www.easemob.com/download/im] [https://jcenter.bintray.com/com/hyphenate/hyphenate-sdk/]
-            "hyphenate"                 : "com.hyphenate:hyphenate-sdk:3.5.4",
+            "hyphenate"              : "com.hyphenate:hyphenate-sdk:3.5.5",
             //httpcore [https://mvnrepository.com/artifact/org.apache.httpcomponents/httpcore]
-            "httpcore"                  : "org.apache.httpcomponents:httpcore:4.4.11",
+            "httpcore"               : "org.apache.httpcomponents:httpcore:4.4.11",
 
             //LeakCanary [https://github.com/square/leakcanary]
-            "leakcanary"                : "com.squareup.leakcanary:leakcanary-android:1.6.3",
+            "leakcanary"             : "com.squareup.leakcanary:leakcanary-android:1.6.3",
 
             //动态权限申请 [https://github.com/googlesamples/easypermissions]
-            "easypermissions"           : "pub.devrel:easypermissions:3.0.0",
+            "easypermissions"        : "pub.devrel:easypermissions:3.0.0",
 
             //MaterialDrawer [https://github.com/mikepenz/MaterialDrawer]
-            "materialdrawer"            : "com.mikepenz:materialdrawer:6.1.2",
+            "materialdrawer"         : "com.mikepenz:materialdrawer:6.1.2",
 
             //ViewRevealAnimator [https://github.com/sephiroth74/ViewRevealAnimator]
-            "viewrevealanimator"        : "it.sephiroth.android.library.viewrevealanimator:view-reveal-animator:1.1.4",
+            "viewrevealanimator"     : "it.sephiroth.android.library.viewrevealanimator:view-reveal-animator:1.1.4",
 
             //RecyclerView-FastScroll [https://github.com/timusus/RecyclerView-FastScroll]
-            "recyclerview-fastscroll"   : "com.simplecityapps:recyclerview-fastscroll:1.0.16",
+            "recyclerview-fastscroll": "com.simplecityapps:recyclerview-fastscroll:1.0.16",
 
             //BoomMenu [https://github.com/Nightonke/BoomMenu]
-            "boommenu"                  : "com.nightonke:boommenu:2.1.1",
+            "boommenu"               : "com.nightonke:boommenu:2.1.1",
 
             //数字加减 Android-SnappingStepper[https://github.com/saiwu-bigkoo/Android-SnappingStepper]
-            "snappingstepper"           : "com.bigkoo:snappingstepper:1.0.2",
+            "snappingstepper"        : "com.bigkoo:snappingstepper:1.0.2",
 
             //android-gif-drawable [https://github.com/koral--/android-gif-drawable]
-            "android-gif-drawable"      : "pl.droidsonroids.gif:android-gif-drawable:1.2.3",
+            "android-gif-drawable"   : "pl.droidsonroids.gif:android-gif-drawable:1.2.3",
 
             //MagicIndicator [https://github.com/hackware1993/MagicIndicator]
-            "MagicIndicator"            : "com.github.hackware1993:MagicIndicator:1.6.0",
+            "MagicIndicator"         : "com.github.hackware1993:MagicIndicator:1.6.0",
 
             //涟漪效果 [https://github.com/poldz123/ShapeRipple]
-            "ShapeRippleLibrary"        : "com.rodolfonavalon:ShapeRippleLibrary:1.0.0",
+            "ShapeRippleLibrary"     : "com.rodolfonavalon:ShapeRippleLibrary:1.0.0",
 
             //View的漂浮动画 [https://github.com/UFreedom/FloatingView]
-            "FloatingViewLib"           : "com.ufreedom.uikit:FloatingViewLib:1.0.2",
+            "FloatingViewLib"        : "com.ufreedom.uikit:FloatingViewLib:1.0.2",
 
             //BadgeView [https://github.com/bingoogolapple/BGABadgeView-Android]
-            "bga-badgeview"             : "cn.bingoogolapple:bga-badgeview:1.1.3@aar",
+            "bga-badgeview"          : "cn.bingoogolapple:bga-badgeview:1.1.3@aar",
 
             //从顶部下来的的提示控件 (需要kotlin运行库) [https://github.com/Tapadoo/Alerter]
-            "alerter"                   : "com.tapadoo.android:alerter:4.0.2",
+            "alerter"                : "com.tapadoo.android:alerter:4.0.3",
 
-            //下拉刷新 [https://github.com/scwang90/SmartRefreshLayout]
-            "SmartRefreshLayout"        : "com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-andx-4",
+            //下拉刷新 [https://github.com/scwang90/SmartRefreshLayout] 需要[implementation 'androidx.legacy:legacy-support-v4:x.x.x']
+            "SmartRefreshLayout"     : "com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-andx-7",
 
             //ExpectAnim 链式调用的动画 [https://github.com/florent37/ExpectAnim]
-            "expectanim"                : "com.github.florent37:expectanim:1.0.7",
+            "expectanim"             : "com.github.florent37:expectanim:1.0.7",
 
             //EventBus [https://github.com/greenrobot/EventBus]
-            "eventbus"                  : "org.greenrobot:eventbus:3.1.1",
+            "eventbus"               : "org.greenrobot:eventbus:3.1.1",
 
             //Material Dialogs [https://github.com/afollestad/material-dialogs] （2.x版本为kotlin版本）
-            "material-dialogs"          : "com.afollestad.material-dialogs:core:0.9.6.0",
-
+            "material-dialogs"       : "com.afollestad.material-dialogs:core:0.9.6.0",
             //Material Dialogs [https://github.com/afollestad/material-dialogs] （2.x版本为kotlin版本）
-            "material-dialogs-core"     : "com.afollestad.material-dialogs:core:2.8.0",
-            "material-dialogs-input"    : "com.afollestad.material-dialogs:input:2.8.0",
+            "material-dialogs-core"  : "com.afollestad.material-dialogs:core:2.8.1",
+            "material-dialogs-input" : "com.afollestad.material-dialogs:input:2.8.1",
 
     ]
 }

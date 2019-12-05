@@ -34,7 +34,7 @@ ext {
     ]
     //依赖第三方配置
     dependencies = [
-            "QLibrary"                  : "com.github.DragonsQC:QLibrary:1.8.6",
+            "QLibrary"                  : "com.github.DragonsQC:QLibrary:1.8.6.1",
 
             //RxLifecycle [https://github.com/trello/RxLifecycle]
             "rxlifecycle"            : "com.trello.rxlifecycle3:rxlifecycle:3.0.0",

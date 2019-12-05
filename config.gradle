@@ -34,7 +34,7 @@ ext {
     ]
     //依赖第三方配置
     dependencies = [
-            "QLibrary"                  : "com.github.DragonsQC:QLibrary:1.8.5",
+            "QLibrary"                  : "com.github.DragonsQC:QLibrary:1.8.6",
 
             //RxLifecycle [https://github.com/trello/RxLifecycle]
             "rxlifecycle"            : "com.trello.rxlifecycle3:rxlifecycle:3.0.0",
@@ -44,26 +44,26 @@ ext {
             "rxbinding"              : "com.jakewharton.rxbinding3:rxbinding:3.0.0-alpha2",
 
             //Glide [https://github.com/bumptech/glide]
-            "glide"                  : "com.github.bumptech.glide:glide:4.9.0",
-            "glide-compiler"         : "com.github.bumptech.glide:compiler:4.9.0",
+            "glide"                  : "com.github.bumptech.glide:glide:4.10.0",
+            "glide-compiler"         : "com.github.bumptech.glide:compiler:4.10.0",
 
             //高德地图 [http://lbs.amap.com/api/android-sdk/changelog，
             // http://lbs.amap.com/api/android-location-sdk/changelog]
             // [https://jcenter.bintray.com/com/amap/api/]
-            "amap-3dmap"             : "com.amap.api:3dmap:6.9.2",
-            "amap-search"            : "com.amap.api:search:6.9.2",
-            "amap-location"          : "com.amap.api:location:4.7.0",
+            "amap-3dmap"             : "com.amap.api:3dmap:7.1.0",
+            "amap-search"            : "com.amap.api:search:7.1.0",
+            "amap-location"          : "com.amap.api:location:4.7.2",
 
             //腾讯Bugly [https://bugly.qq.com/v2/downloads] [https://jcenter.bintray.com/com/tencent/bugly/]
-            "bugly"                  : "com.tencent.bugly:crashreport_upgrade:1.4.1",
+            "bugly"                  : "com.tencent.bugly:crashreport_upgrade:1.4.2",
 
             //环信 [http://www.easemob.com/download/im] [https://jcenter.bintray.com/com/hyphenate/hyphenate-sdk/]
-            "hyphenate"              : "com.hyphenate:hyphenate-sdk:3.6.1",
+            "hyphenate"              : "com.hyphenate:hyphenate-sdk:3.6.2",
             //httpcore [https://mvnrepository.com/artifact/org.apache.httpcomponents/httpcore]
-            "httpcore"               : "org.apache.httpcomponents:httpcore:4.4.11",
+            "httpcore"               : "org.apache.httpcomponents:httpcore:4.4.12",
 
             //LeakCanary [https://github.com/square/leakcanary]
-            "leakcanary"             : "com.squareup.leakcanary:leakcanary-android:2.0-beta-2",
+            "leakcanary"             : "com.squareup.leakcanary:leakcanary-android:2.0",
 
             //动态权限申请 [https://github.com/googlesamples/easypermissions]
             "easypermissions"        : "pub.devrel:easypermissions:3.0.0",
@@ -99,7 +99,7 @@ ext {
             "bga-badgeview"          : "cn.bingoogolapple:bga-badgeview:1.1.3@aar",
 
             //从顶部下来的的提示控件 (需要kotlin运行库) [https://github.com/Tapadoo/Alerter]
-            "alerter"                : "com.tapadoo.android:alerter:4.0.3",
+            "alerter"                : "com.tapadoo.android:alerter:5.0.0",
 
             //下拉刷新 [https://github.com/scwang90/SmartRefreshLayout] 需要[implementation 'androidx.legacy:legacy-support-v4:x.x.x']
             "SmartRefreshLayout"     : "com.scwang.smartrefresh:SmartRefreshLayout:1.1.0",
@@ -110,11 +110,11 @@ ext {
             //EventBus [https://github.com/greenrobot/EventBus]
             "eventbus"               : "org.greenrobot:eventbus:3.1.1",
 
-            //Material Dialogs [https://github.com/afollestad/material-dialogs] （2.x版本为kotlin版本）
+            //Material Dialogs [https://github.com/afollestad/material-dialogs]
             "material-dialogs"       : "com.afollestad.material-dialogs:core:0.9.6.0",
-            //Material Dialogs [https://github.com/afollestad/material-dialogs] （2.x版本为kotlin版本）
-            "material-dialogs-core"  : "com.afollestad.material-dialogs:core:2.8.1",
-            "material-dialogs-input" : "com.afollestad.material-dialogs:input:2.8.1",
+            //Material Dialogs [https://github.com/afollestad/material-dialogs] （kotlin版本）
+            "material-dialogs-core"  : "com.afollestad.material-dialogs:core:3.1.1",
+            "material-dialogs-input" : "com.afollestad.material-dialogs:input:3.1.1",
 
     ]
 }

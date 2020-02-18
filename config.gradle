@@ -2,7 +2,7 @@ ext {
     //android开发版本配置
     android = [
             compileSdkVersion: 29,
-            buildToolsVersion: "29.0.2",
+            buildToolsVersion: "29.0.3",
             minSdkVersion    : 21,
             targetSdkVersion : 29,
     ]
@@ -23,8 +23,8 @@ ext {
             "constraintlayout"    : "androidx.constraintlayout:constraintlayout:1.1.3",
 
             ////Google AAC
-            "lifecycle-compiler"  : "androidx.lifecycle:lifecycle-compiler:2.0.0",
-            "lifecycle-extensions": "androidx.lifecycle:lifecycle-extensions:2.0.0",
+            "lifecycle-compiler"  : "androidx.lifecycle:lifecycle-compiler:2.2.0",
+            "lifecycle-extensions": "androidx.lifecycle:lifecycle-extensions:2.2.0",
 
             "material"            : "com.google.android.material:material:1.0.0",
 
@@ -34,7 +34,7 @@ ext {
     ]
     //依赖第三方配置
     dependencies = [
-            "QLibrary"                  : "com.github.DragonsQC:QLibrary:1.8.6.1",
+            "QLibrary"                  : "com.github.DragonsQC:QLibrary:1.8.6.2",
 
             //RxLifecycle [https://github.com/trello/RxLifecycle]
             "rxlifecycle"            : "com.trello.rxlifecycle3:rxlifecycle:3.0.0",
@@ -44,26 +44,26 @@ ext {
             "rxbinding"              : "com.jakewharton.rxbinding3:rxbinding:3.0.0-alpha2",
 
             //Glide [https://github.com/bumptech/glide]
-            "glide"                  : "com.github.bumptech.glide:glide:4.10.0",
-            "glide-compiler"         : "com.github.bumptech.glide:compiler:4.10.0",
+            "glide"                  : "com.github.bumptech.glide:glide:4.11.0",
+            "glide-compiler"         : "com.github.bumptech.glide:compiler:4.11.0",
 
             //高德地图 [http://lbs.amap.com/api/android-sdk/changelog，
             // http://lbs.amap.com/api/android-location-sdk/changelog]
             // [https://jcenter.bintray.com/com/amap/api/]
-            "amap-3dmap"             : "com.amap.api:3dmap:7.1.0",
+            "amap-3dmap"             : "com.amap.api:3dmap:7.2.0",
             "amap-search"            : "com.amap.api:search:7.1.0",
-            "amap-location"          : "com.amap.api:location:4.7.2",
+            "amap-location"          : "com.amap.api:location:4.8.0",
 
             //腾讯Bugly [https://bugly.qq.com/v2/downloads] [https://jcenter.bintray.com/com/tencent/bugly/]
             "bugly"                  : "com.tencent.bugly:crashreport_upgrade:1.4.2",
 
             //环信 [http://www.easemob.com/download/im] [https://jcenter.bintray.com/com/hyphenate/hyphenate-sdk/]
-            "hyphenate"              : "com.hyphenate:hyphenate-sdk:3.6.2",
+            "hyphenate"              : "com.hyphenate:hyphenate-sdk:3.6.3",
             //httpcore [https://mvnrepository.com/artifact/org.apache.httpcomponents/httpcore]
-            "httpcore"               : "org.apache.httpcomponents:httpcore:4.4.12",
+            "httpcore"               : "org.apache.httpcomponents:httpcore:4.4.13",
 
             //LeakCanary [https://github.com/square/leakcanary]
-            "leakcanary"             : "com.squareup.leakcanary:leakcanary-android:2.0",
+            "leakcanary"             : "com.squareup.leakcanary:leakcanary-android:2.2",
 
             //动态权限申请 [https://github.com/googlesamples/easypermissions]
             "easypermissions"        : "pub.devrel:easypermissions:3.0.0",
@@ -75,7 +75,7 @@ ext {
             "viewrevealanimator"     : "it.sephiroth.android.library.viewrevealanimator:view-reveal-animator:1.1.4",
 
             //RecyclerView-FastScroll [https://github.com/timusus/RecyclerView-FastScroll]
-            "recyclerview-fastscroll": "com.simplecityapps:recyclerview-fastscroll:1.0.16",
+            "recyclerview-fastscroll": "com.simplecityapps:recyclerview-fastscroll:2.0.0",
 
             //BoomMenu [https://github.com/Nightonke/BoomMenu]
             "boommenu"               : "com.nightonke:boommenu:2.1.1",
@@ -84,7 +84,7 @@ ext {
             "snappingstepper"        : "com.bigkoo:snappingstepper:1.0.2",
 
             //android-gif-drawable [https://github.com/koral--/android-gif-drawable]
-            "android-gif-drawable"   : "pl.droidsonroids.gif:android-gif-drawable:1.2.3",
+            "android-gif-drawable"   : "pl.droidsonroids.gif:android-gif-drawable:1.2.19",
 
             //MagicIndicator [https://github.com/hackware1993/MagicIndicator]
             "MagicIndicator"         : "com.github.hackware1993:MagicIndicator:1.6.0",
@@ -99,7 +99,7 @@ ext {
             "bga-badgeview"          : "cn.bingoogolapple:bga-badgeview:1.1.3@aar",
 
             //从顶部下来的的提示控件 (需要kotlin运行库) [https://github.com/Tapadoo/Alerter]
-            "alerter"                : "com.tapadoo.android:alerter:5.0.0",
+            "alerter"                : "com.tapadoo.android:alerter:5.1.2",
 
             //下拉刷新 [https://github.com/scwang90/SmartRefreshLayout] 需要[implementation 'androidx.legacy:legacy-support-v4:x.x.x']
             "SmartRefreshLayout"     : "com.scwang.smartrefresh:SmartRefreshLayout:1.1.0",
@@ -113,8 +113,8 @@ ext {
             //Material Dialogs [https://github.com/afollestad/material-dialogs]
             "material-dialogs"       : "com.afollestad.material-dialogs:core:0.9.6.0",
             //Material Dialogs [https://github.com/afollestad/material-dialogs] （kotlin版本）
-            "material-dialogs-core"  : "com.afollestad.material-dialogs:core:3.1.1",
-            "material-dialogs-input" : "com.afollestad.material-dialogs:input:3.1.1",
+            "material-dialogs-core"  : "com.afollestad.material-dialogs:core:2.8.1",
+            "material-dialogs-input" : "com.afollestad.material-dialogs:input:2.8.1",
 
     ]
 }
